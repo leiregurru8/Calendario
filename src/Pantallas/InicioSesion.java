@@ -6,11 +6,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.JTextComponent;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InicioSesion extends JFrame {
 
@@ -50,7 +54,43 @@ public class InicioSesion extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnLogin = new JButton("Login");
+		JButton btnLogin = new JButton("Ingresar");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JPasswordField jpassClave;
+				char clave[]=jpassClave.getPassword();
+
+				String clavedef=new String(clave);
+
+
+				JTextComponent txtUsuario;
+				if (txtUsuario.getText().equals("Administrador") && clavedef.equals("12345")){
+
+
+				                    this.dispose();
+
+
+				                    JOptionPane.showMessageDialog(null, "Bienvenido\n"
+				                    + "Has ingresado satisfactoriamente al sistema",   "Mensaje de bienvenida",
+				                    JOptionPane.INFORMATION_MESSAGE);
+
+
+				                    Formulario1 formformulario1 = new Formulario1();
+
+				                    formformulario1.setVisible(true);
+
+
+				            }else {
+
+
+				                    JOptionPane.showMessageDialog(null, "Acceso denegado:\n"
+				                    + "Por favor ingrese un usuario y/o contraseña correctos", "Acceso denegado",
+				                    JOptionPane.ERROR_MESSAGE);
+				           
+
+				            }
+			}
+		});
 		btnLogin.setBounds(264, 181, 115, 29);
 		contentPane.add(btnLogin);
 		
@@ -62,7 +102,7 @@ public class InicioSesion extends JFrame {
 		lblUsuario.setBounds(81, 58, 96, 26);
 		contentPane.add(lblUsuario);
 		
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
+		JLabel lblContrasea = new JLabel("Clave");
 		lblContrasea.setBounds(69, 118, 96, 23);
 		contentPane.add(lblContrasea);
 		

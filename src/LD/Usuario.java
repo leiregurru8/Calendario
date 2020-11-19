@@ -1,4 +1,4 @@
-package Objetos;
+package LD;
 
 public class Usuario {
 	private String nombre;

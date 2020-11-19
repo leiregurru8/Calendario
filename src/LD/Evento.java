@@ -1,4 +1,4 @@
-package Objetos;
+package LD;
 import java.util.Date;
 
 public abstract class Evento {
